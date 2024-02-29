@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiApplication</name>
+    </assembly>
+    <members>
+        <member name="M:ApiApplication.Controllers.DataJobController.GetDataJobs">
+            <summary>
+            Retrieves all the data jobs in the database.
+            </summary>
+            <returns>An instance of GetAllDataJobsResponse containing the collection of DatajobDTO</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.GetProcessesByStatus(System.Int32)">
+            <summary>
+            Gets the data jobs by status. 
+            </summary>
+            <param name="status">Status identifier</param>
+            <returns>An instance of getDataJobsByStatusResponse containing the collection of DatajobDTO</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.GetDataJob(System.Guid)">
+            <summary>
+            Returns one datajob by its identifier.
+            </summary>
+            <param name="id">Guid identifing the datajob</param>
+            <returns>Instance of GetDataJobByIdResponse</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.Create(ApiApplication.Contracts.CreateDataJobRequest)">
+            <summary>
+            Creates a new datajob
+            </summary>
+            <param name="request">Instance of CreateDataJobRequest containing the new datajob data</param>
+            <returns>CreateDataJobResponse with the data of the new datajob</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.Update(ApiApplication.Contracts.UpdateDataJobRequest)">
+            <summary>
+            Updates the datajob with the new data
+            </summary>
+            <param name="request">CreateDataJobRequest instance containing the new Data</param>
+            <returns>Instance of UpdateDataJobResponse</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ApiApplication.Controllers.DataJobController.Delete(System.Guid)" -->
+        <member name="M:ApiApplication.Controllers.DataJobController.StartBackgroundProcess(System.Guid)">
+            <summary>
+            Starts a background process
+            </summary>
+            <param name="id">The datajob's guid</param>
+            <returns>True if started.</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.GetBackgroundProcessStatus(System.Guid)">
+            <summary>
+            Gets the status of a background process
+            </summary>
+            <param name="id">Datajob identifier</param>
+            <returns>Instance of GetBackgroundProcessStatusResponse</returns>
+        </member>
+        <member name="M:ApiApplication.Controllers.DataJobController.GetBackgroundProcessResults(System.Guid)">
+            <summary>
+            Gets a list of the files produced by the background process
+            </summary>
+            <param name="id">Datajob identifier</param>
+            <returns>Instance of GetBackgroundProcessResultsResponse containing the file list</returns>
+        </member>
+    </members>
+</doc>
