@@ -96,7 +96,6 @@ namespace Tests
 
             // Assert
             _dataJobRepositoryMock.Received(1).Delete(Arg.Is(validDataJobId));
-            _dataJobRepositoryMock.DidNotReceive().Delete(Arg.Any<Guid>());
         }
 
         [Test]
@@ -130,6 +129,9 @@ namespace Tests
 
             _dataJobRepositoryMock.GetById(Arg.Any<Guid>())
                 .Returns(info => returnedDataJobEntity);
+
+            _dataJobRepositoryMock.ExistsDataJob(Arg.Any<Guid>())
+                .Returns(dj => true);
 
             _dataJobRepositoryMock.Update(Arg.Any<DataJobEntity>())
                 .Returns(info => returnedDataJobEntity);
